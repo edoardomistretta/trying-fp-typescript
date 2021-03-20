@@ -1,4 +1,8 @@
 import {
+  cae1,
+  cae2,
+  cae3,
+  cae4,
   svu1,
   svu2,
   svu3,
@@ -28,3 +32,7 @@ legacyPrintEitherResult(vuc1); // right
 legacyPrintEitherResult(vuc2); // left, InvalidUsername
 legacyPrintEitherResult(vuc3); // left, InvalidPassword
 legacyPrintEitherResult(vuc4); // left, InvalidUsername
+legacyPrintEitherResult(cae1); // right
+legacyPrintEitherResult(cae2); // left, left invalid username provided
+legacyPrintEitherResult(cae3); // left, left invalid password provided
+legacyPrintEitherResult(cae4); // left, left invalid username provided

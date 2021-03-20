@@ -1,3 +1,4 @@
+import { catchAllEither } from "@app/type/CatchAllEither";
 import { chainEither } from "@app/type/ChainEither";
 import { Either, left, right } from "@app/type/Either";
 
@@ -32,6 +33,7 @@ export const validateUserChain = (
   return chainEither(usernameValidated, validatePassword);
 };
 
+// first version
 export const svu1 = simpleValidateUser({
   username: "user",
   password: "pwd",
@@ -49,6 +51,7 @@ export const svu4 = simpleValidateUser({
   password: "pwdpwdpwdpwd",
 });
 
+// second version
 export const vuc1 = validateUserChain({
   username: "user",
   password: "pwd",
@@ -65,3 +68,41 @@ export const vuc4 = validateUserChain({
   username: "useruseruser",
   password: "pwdpwdpwdpwd",
 });
+
+// third version
+const catchError = (_: ValidationError) => {
+  switch (_) {
+    case "InvalidUsername":
+      return left("invalid username provided");
+    case "InvalidPassword":
+      return left("invalid password provided");
+  }
+};
+export const cae1 = catchAllEither(
+  validateUserChain({
+    username: "user",
+    password: "pwd",
+  }),
+  catchError
+);
+export const cae2 = catchAllEither(
+  validateUserChain({
+    username: "useruseruser",
+    password: "pwd",
+  }),
+  catchError
+);
+export const cae3 = catchAllEither(
+  validateUserChain({
+    username: "user",
+    password: "pwdpwdpwdpwd",
+  }),
+  catchError
+);
+export const cae4 = catchAllEither(
+  validateUserChain({
+    username: "useruseruser",
+    password: "pwdpwdpwdpwd",
+  }),
+  catchError
+);
