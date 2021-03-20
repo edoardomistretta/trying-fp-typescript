@@ -1,0 +1,7 @@
+node_modules/
+coverage/
+dist/
+custom.env
+docker-compose.override.yml
+.eslintcache
+*.log

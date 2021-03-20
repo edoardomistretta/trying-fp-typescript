@@ -1,0 +1,18 @@
+{
+  "extends": "facile/node",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "ignorePatterns": [
+    "node_modules/",
+    "coverage/",
+    "dist/",
+    "/config/"
+  ],
+  "rules": {
+    "node/no-unpublished-import": "off",
+    "node/no-missing-import": "off",
+    "no-case-declarations": "off",
+    "@typescript-eslint/consistent-type-definitions": "off"
+  }
+}
