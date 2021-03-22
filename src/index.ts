@@ -1,3 +1,4 @@
+import { pipe } from "@app/example/overloads-pipe";
 import {
   cae1,
   cae2,
@@ -23,6 +24,10 @@ const legacyPrintEitherResult = <E, A>(_: Either<E, A>) => {
     console.log(`right ${JSON.stringify(_.right)}`);
   }
 };
+const l = (_: any) => {
+  // eslint-disable-next-line no-console
+  console.log(_);
+};
 
 legacyPrintEitherResult(svu1); // right
 legacyPrintEitherResult(svu2); // left, InvalidUsername
@@ -36,3 +41,20 @@ legacyPrintEitherResult(cae1); // right
 legacyPrintEitherResult(cae2); // left, left invalid username provided
 legacyPrintEitherResult(cae3); // left, left invalid password provided
 legacyPrintEitherResult(cae4); // left, left invalid username provided
+
+l(pipe(1, (n) => n + 1));
+l(
+  pipe(
+    1,
+    (n) => n + 1,
+    (n) => n + 1
+  )
+);
+l(
+  pipe(
+    1,
+    (n) => n + 1,
+    (n) => n + 1,
+    (n) => n + 1
+  )
+);
