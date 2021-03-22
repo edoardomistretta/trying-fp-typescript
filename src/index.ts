@@ -1,3 +1,4 @@
+import { flow } from "@app/example/overloads-flow";
 import { pipe } from "@app/example/overloads-pipe";
 import {
   cae1,
@@ -57,4 +58,18 @@ l(
     (n) => n + 1,
     (n) => n + 1
   )
+);
+l(flow((n: number) => n + 1)(1));
+l(
+  flow(
+    (n: number) => n + 1,
+    (n) => n + 1
+  )(1)
+);
+l(
+  flow(
+    (n: number) => n + 1,
+    (n) => n + 1,
+    (n) => n + 1
+  )(1)
 );
