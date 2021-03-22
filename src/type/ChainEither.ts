@@ -1,4 +1,4 @@
-import { Either, left } from "@app/type/Either";
+import { Either } from "@app/type/Either";
 
 // type
 export type ChainEither = <E, E0, A, B>(
@@ -9,7 +9,7 @@ export type ChainEither = <E, E0, A, B>(
 // type constructor
 export const chainEither: ChainEither = (self, f) => {
   if (self._tag === "Left") {
-    return left(self.left);
+    return self;
   }
   return f(self.right);
 };

@@ -1,4 +1,4 @@
-import { Either, left, right } from "@app/type/Either";
+import { Either, right } from "@app/type/Either";
 
 // type
 export type MapEither = <E, A, B>(
@@ -9,7 +9,7 @@ export type MapEither = <E, A, B>(
 // type constructor
 export const mapEither: MapEither = (self, f) => {
   if (self._tag === "Left") {
-    return left(self.left);
+    return self;
   }
   return right(f(self.right));
 };
