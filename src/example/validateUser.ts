@@ -37,37 +37,37 @@ export const validateUserChain = (
 export const svu1 = simpleValidateUser({
   username: "user",
   password: "pwd",
-});
+}); // right
 export const svu2 = simpleValidateUser({
   username: "useruseruser",
   password: "pwd",
-});
+}); // left, InvalidUsername
 export const svu3 = simpleValidateUser({
   username: "user",
   password: "pwdpwdpwdpwd",
-});
+}); // left, InvalidPassword
 export const svu4 = simpleValidateUser({
   username: "useruseruser",
   password: "pwdpwdpwdpwd",
-});
+}); // left, InvalidUsername
 
 // second version
 export const vuc1 = validateUserChain({
   username: "user",
   password: "pwd",
-});
+}); // right
 export const vuc2 = validateUserChain({
   username: "useruseruser",
   password: "pwd",
-});
+}); // left, InvalidUsername
 export const vuc3 = validateUserChain({
   username: "user",
   password: "pwdpwdpwdpwd",
-});
+}); // left, InvalidPassword
 export const vuc4 = validateUserChain({
   username: "useruseruser",
   password: "pwdpwdpwdpwd",
-});
+}); // left, InvalidUsername
 
 // third version
 const catchError = (_: ValidationError) => {
@@ -84,25 +84,25 @@ export const cae1 = catchAllEither(
     password: "pwd",
   }),
   catchError
-);
+); // right
 export const cae2 = catchAllEither(
   validateUserChain({
     username: "useruseruser",
     password: "pwd",
   }),
   catchError
-);
+); // left, left invalid username provided
 export const cae3 = catchAllEither(
   validateUserChain({
     username: "user",
     password: "pwdpwdpwdpwd",
   }),
   catchError
-);
+); // left, left invalid password provided
 export const cae4 = catchAllEither(
   validateUserChain({
     username: "useruseruser",
     password: "pwdpwdpwdpwd",
   }),
   catchError
-);
+); // left, left invalid username provided
