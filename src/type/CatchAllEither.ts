@@ -1,4 +1,4 @@
-import { Either } from "@app/type/Either";
+import { Either } from "@type/Either";
 
 // type
 export type CatchAllEither = <E, E1, A>(

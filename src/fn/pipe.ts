@@ -18,11 +18,3 @@ export function pipe<T>(input: T, ...fns: ((_: any) => any)[]) {
   }
   return result;
 }
-
-pipe(1);
-pipe(1, (t1: number) => t1 + 1);
-pipe(
-  1,
-  (t1: number) => t1 + 1,
-  (t2: number) => t2 + 1
-);

@@ -1,4 +1,4 @@
-import { Option } from "@app/type/Option";
+import { Option } from "@type/Option";
 
 // type
 export type ChainOption = <A, B>(

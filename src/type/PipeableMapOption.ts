@@ -1,5 +1,5 @@
-import { pipe } from "@app/example/overloads-pipe";
-import { none, Option, some } from "@app/type/Option";
+import { pipe } from "@fn/pipe";
+import { none, Option, some } from "@type/Option";
 
 // type
 export type PipeableMapOption = <A, B>(

@@ -1,6 +1,6 @@
-import { pipe } from "@app/example/overloads-pipe";
-import { left, right } from "@app/type/Either";
-import { pipeableChainEither } from "@app/type/PipeableChainEither";
+import { pipe } from "@fn/pipe";
+import { left, right } from "@type/Either";
+import { pipeableChainEither } from "@type/PipeableChainEither";
 
 describe("Pipeable Chain Either", () => {
   it("should return right number", () => {

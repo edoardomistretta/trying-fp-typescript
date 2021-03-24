@@ -1,6 +1,6 @@
-import { catchAllEither } from "@app/type/CatchAllEither";
-import { chainEither } from "@app/type/ChainEither";
-import { Either, left, right } from "@app/type/Either";
+import { catchAllEither } from "@type/CatchAllEither";
+import { chainEither } from "@type/ChainEither";
+import { Either, left, right } from "@type/Either";
 
 type User = {
   username: string;

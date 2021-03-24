@@ -1,6 +1,6 @@
-import { pipe } from "@app/example/overloads-pipe";
-import { left, right } from "@app/type/Either";
-import { pipeableMapEither } from "@app/type/PipeableMapEither";
+import { pipe } from "@fn/pipe";
+import { left, right } from "@type/Either";
+import { pipeableMapEither } from "@type/PipeableMapEither";
 
 describe("Pipeable Map Either", () => {
   it("should return right number", () => {

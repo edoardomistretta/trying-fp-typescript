@@ -1,4 +1,4 @@
-import { none, Option, some } from "@app/type/Option";
+import { none, Option, some } from "@type/Option";
 
 // type
 export type MapOption = <A, B>(self: Option<A>, f: (a: A) => B) => Option<B>;

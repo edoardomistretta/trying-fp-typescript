@@ -1,4 +1,4 @@
-import { Reader } from "@app/type/Reader";
+import { Reader } from "@type/Reader";
 
 export type ChainReader = <R, A, B>(
   self: Reader<R, A>,

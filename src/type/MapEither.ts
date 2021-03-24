@@ -1,4 +1,4 @@
-import { Either, right } from "@app/type/Either";
+import { Either, right } from "@type/Either";
 
 // type
 export type MapEither = <E, A, B>(

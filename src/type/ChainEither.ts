@@ -1,4 +1,4 @@
-import { Either } from "@app/type/Either";
+import { Either } from "@type/Either";
 
 // type
 export type ChainEither = <E, E0, A, B>(

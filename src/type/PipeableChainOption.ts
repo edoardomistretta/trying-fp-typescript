@@ -1,4 +1,4 @@
-import { none, Option } from "@app/type/Option";
+import { none, Option } from "@type/Option";
 
 // type
 export type PipeableChainOption = <A, B>(

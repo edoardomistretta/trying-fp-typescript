@@ -1,6 +1,6 @@
-import { pipe } from "@app/example/overloads-pipe";
-import { none, some } from "@app/type/Option";
-import { pipeableMapOption } from "@app/type/PipeableMapOption";
+import { pipe } from "@fn/pipe";
+import { none, some } from "@type/Option";
+import { pipeableMapOption } from "@type/PipeableMapOption";
 
 describe("Pipeable Map Option", () => {
   it("should return some value", () => {
