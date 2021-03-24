@@ -1,9 +1,9 @@
 import { Either, right } from "@type/Either";
 
 // type
-export type PipeableMapEither = <E, A, B>(
+export type PipeableMapEither = <A, B>(
   f: (a: A) => B
-) => (self: Either<E, A>) => Either<E, B>;
+) => <E>(self: Either<E, A>) => Either<E, B>;
 
 // type constructor
 export const pipeableMapEither: PipeableMapEither = (f) => {
