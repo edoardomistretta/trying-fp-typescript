@@ -9,7 +9,7 @@ export function flow<T, T1, T2, T3>(
   f3: (t2: T2) => T3
 ): (t: T) => T3;
 
-export function flow(...fns: ((_: any) => any)[]) {
+export function flow<T>(...fns: ((_: T) => T)[]) {
   return (input: any) => {
     let result = input;
     for (let x = 0; x < fns.length; x++) {
