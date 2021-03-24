@@ -7,9 +7,11 @@
   "scripts": {
     "start": "node ./dist/index.js",
     "build": "ttsc --p ./tsconfig.build.json",
+    "build-no-emit": "ttsc --noEmit true --p ./tsconfig.build.json",
     "dev": "nodemon -L --config ./config/nodemon.config.json",
     "lint": "eslint --config ./config/eslint.config.json",
-    "test": "jest --runInBand --config ./config/jest.config.json"
+    "test": "jest --runInBand --config ./config/jest.config.json",
+    "pre-commit": "npm run test && npm run lint ./src ./test && npm run build-no-emit"
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",
