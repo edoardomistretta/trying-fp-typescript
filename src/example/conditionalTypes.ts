@@ -18,7 +18,7 @@ type TypeName<A> = A extends string
   ? "boolean"
   : "other";
 
-type AOfOption<A> = [A] extends [Option<infer R>] ? R : never; // non-naked
+export type AOfOption<A> = [A] extends [Option<infer R>] ? R : never; // non-naked
 type AOfOptionString = AOfOption<Option<string>>;
 type AOfOptionNumber = AOfOption<Option<number>>;
 
