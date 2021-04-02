@@ -9,7 +9,7 @@ describe("Pipeable Catch All Either", () => {
       pipeableCatchAllEither((n) => right(n * 2)),
       pipeableCatchAllEither((n) => right(n * 2))
     );
-    expect(r).toStrictEqual(right(4));
+    expect(r).toStrictEqual(right(1));
   });
   it("should return all errors", () => {
     const l = pipe(
@@ -17,6 +17,6 @@ describe("Pipeable Catch All Either", () => {
       pipeableCatchAllEither((n) => left(n * 2)),
       pipeableCatchAllEither((n) => right(n * 2))
     );
-    expect(l).toStrictEqual(left(1));
+    expect(l).toStrictEqual(right(4));
   });
 });
