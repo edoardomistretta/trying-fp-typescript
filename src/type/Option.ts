@@ -7,6 +7,7 @@ export type Some<A> = {
   value: A;
 };
 export type Option<A> = None | Some<A>;
+export type AOfOption<A> = [A] extends [Option<infer X>] ? X : never;
 
 // types constructors
 export const none: Option<never> = {
@@ -18,3 +19,13 @@ export const some = <A>(value: A): Option<A> => {
     value,
   };
 };
+
+export declare function tupleOption<ARGS extends Option<any>[]>(
+  ...params: ARGS & { 0: Option<any> }
+): Option<
+  {
+    [k in keyof ARGS]: AOfOption<ARGS[k]>;
+  }
+>;
+
+const t = tupleOption(none, some(1));
